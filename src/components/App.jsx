@@ -19,7 +19,7 @@ export const App = () => {
 
   useEffect(() => {
     if (firstRenderFlag) {
-      const contactsFromLocalStorage = localStorage.getItem('contactList');
+      const contactsFromLocalStorage = localStorage.getItem('contacts');
 
       if (contactsFromLocalStorage !== 'undefined') {
         const parsedContacts = JSON.parse(contactsFromLocalStorage);
@@ -30,7 +30,7 @@ export const App = () => {
       }
       setFlag(false);
     } else {
-      localStorage.setItem('contactList', JSON.stringify(contacts));
+      localStorage.setItem('contacts', JSON.stringify(contacts));
     }
   }, [contacts, firstRenderFlag]);
 
