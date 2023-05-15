@@ -25,6 +25,8 @@ export const ContactForm = ({ onSubmit }) => {
     const form = e.currentTarget;
     onSubmit({ name: name, number: number, id: nanoid() });
     form.reset();
+    setName('');
+    setNumber('');
   };
 
   return (
